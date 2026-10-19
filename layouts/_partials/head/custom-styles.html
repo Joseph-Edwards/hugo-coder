@@ -11,11 +11,11 @@
 {{ range .Site.Params.customSCSS }}
   {{/* We don't change the targetPath to because it's transparent to users */}}
   {{ if hugo.IsServer }}
-    {{ $cssOpts := (dict "enableSourceMap" true ) }}
+    {{ $cssOpts := (dict "transpiler" "dartsass" "enableSourceMap" true ) }}
     {{ $styles := resources.Get . | toCSS $cssOpts }}
     <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen">
   {{ else }}
-    {{ $styles := resources.Get . | toCSS | resources.Minify | resources.Fingerprint }}
+    {{ $styles := resources.Get . | toCSS (dict "transpiler" "dartsass") | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous" media="screen" />
   {{ end }}
 {{ end }}

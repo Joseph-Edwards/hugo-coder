@@ -1,7 +1,9 @@
+@use "variables";
+
 @mixin notices_dark {
   .notice {
     .notice-title {
-      border-bottom: 1px solid $bg-color-dark;
+      border-bottom: 1px solid variables.$bg-color-dark;
     }
   }
 }

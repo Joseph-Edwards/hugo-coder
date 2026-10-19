@@ -1,17 +1,19 @@
+@use "variables";
+
 @mixin tabs_dark {
   .tabs {
     label.tab-label {
-      background-color: $alt-bg-color-dark;
-      border-color: $lighter-alt-bg-color-dark;
+      background-color: variables.$alt-bg-color-dark;
+      border-color: variables.$lighter-alt-bg-color-dark;
     }
 
     input.tab-input:checked + label.tab-label {
-      background-color: $bg-color-dark;
+      background-color: variables.$bg-color-dark;
     }
 
     .tab-content {
-      background-color: $bg-color-dark;
-      border-color: $lighter-alt-bg-color-dark;
+      background-color: variables.$bg-color-dark;
+      border-color: variables.$lighter-alt-bg-color-dark;
     }
   }
 }

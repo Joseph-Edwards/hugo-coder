@@ -1,12 +1,14 @@
+@use "variables";
+
 @mixin taxonomy_dark {
   .taxonomy-element {
-    background-color: $alt-bg-color-dark;
+    background-color: variables.$alt-bg-color-dark;
 
     a {
-      color: $fg-color-dark;
+      color: variables.$fg-color-dark;
     }
     a:active {
-      color: $fg-color-dark;
+      color: variables.$fg-color-dark;
     }
   }
 }

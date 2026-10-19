@@ -1,3 +1,5 @@
+@use "variables";
+
 .navigation {
   height: 6rem;
   width: 100%;
@@ -6,16 +8,16 @@
   span {
     display: inline;
     font-size: 1.7rem;
-    font-family: $font-family;
+    font-family: variables.$font-family;
     font-weight: 600;
-    color: $fg-color;
+    color: variables.$fg-color;
   }
 
   a {
 
     &:hover,
     &:focus {
-      color: $link-color;
+      color: variables.$link-color;
     }
   }
 
@@ -40,9 +42,9 @@
       padding: 0;
       max-height: 0;
       width: 100%;
-      background-color: $bg-color;
-      border-top: solid 2px $alt-bg-color;
-      border-bottom: solid 2px $alt-bg-color;
+      background-color: variables.$bg-color;
+      border-top: solid 2px variables.$alt-bg-color;
+      border-bottom: solid 2px variables.$alt-bg-color;
       transition: opacity 0.25s, max-height 0.15s linear;
     }
 
@@ -76,7 +78,7 @@
 
     .menu-separator {
       @media only screen and (max-width: 768px) {
-        border-top: 2px solid $fg-color;
+        border-top: 2px solid variables.$fg-color;
         margin: 0 8rem;
 
         span {
@@ -105,7 +107,7 @@
       visibility: hidden;
 
       &:checked+label>i {
-        color: $alt-bg-color;
+        color: variables.$alt-bg-color;
       }
 
       &:checked+label+ul {
@@ -134,18 +136,18 @@
 
       &:hover,
       &:focus {
-        color: $alt-fg-color;
+        color: variables.$alt-fg-color;
       }
     }
   }
 
   i {
-    color: $fg-color;
+    color: variables.$fg-color;
     cursor: pointer;
 
     &:hover,
     &:focus {
-      color: $link-color;
+      color: variables.$link-color;
     }
   }
 }

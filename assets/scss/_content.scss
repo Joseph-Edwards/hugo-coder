@@ -1,3 +1,8 @@
+@use "font-awesome/functions";
+@use "font-awesome/variables";
+@use "font-awesome/core";
+@use "variables" as local-variables;
+
 .content {
   flex: 1;
   display: flex;
@@ -28,7 +33,7 @@
     a:where(.external-link):not(:has(img)):after {
       @extend %fa-icon;
       @extend .fa-solid;
-      content: fa-content($fa-var-external-link);
+      content: functions.fa-content(variables.$fa-var-external-link);
       padding-left: 0.5em;
       font-size: 0.75em;
       display: inline;
@@ -85,16 +90,16 @@
         .tag {
           display: inline-block;
           padding: 0.3rem 0.6rem;
-          background-color: $alt-bg-color;
+          background-color: local-variables.$alt-bg-color;
           border-radius: 0.6rem;
           line-height: 1.5em;
 
           a {
-            color: $fg-color;
+            color: local-variables.$fg-color;
           }
 
           a:active {
-            color: $fg-color;
+            color: local-variables.$fg-color;
           }
         }
       }
@@ -153,13 +158,13 @@
       .title {
         font-size: 1.8rem;
         flex: 2;
-        color: $fg-color;
-        font-family: $font-family;
+        color: local-variables.$fg-color;
+        font-family: local-variables.$font-family;
         font-weight: 700;
 
         &:hover,
         &:focus {
-          color: $link-color;
+          color: local-variables.$link-color;
         }
       }
     }
@@ -208,7 +213,7 @@
         position: relative;
 
         a {
-          color: $fg-color;
+          color: local-variables.$fg-color;
           text-transform: uppercase;
           margin-left: 1rem;
           margin-right: 1rem;
@@ -216,7 +221,7 @@
 
           &:hover,
           &:focus {
-            color: $link-color;
+            color: local-variables.$link-color;
           }
 
           @media only screen and (max-width: 768px) {
